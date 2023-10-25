@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <script src="https://kit.fontawesome.com/7cf5448cc8.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        position: fixed;
+        background: #232526;
+        background: -webkit-linear-gradient(to right, #414345, #232526);
+        background: linear-gradient(to right, #414345, #232526);
+        top: -5px;
+        z-index: 99;
+        height: 60px;
+        width: 100vw;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-around;
+        width: 95vw;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .header-icon {
+        width: 200px;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        position: relative;
+    }
+
+    #search-box {
+        position: absolute;
+        top: 40px;
+        left: -280px;
+        width: 350px;
+        height: 70px;
+        background-color: #E5E7Eb;
+        display: none;
+    }
+
+    #search-text {
+        width: 300px;
+        height: 30px;
+        margin-left: 25px;
+        outline: none;
+        border: none;
+        background-color: #E5E7Eb;
+        margin-top: 20px;
+        font-size: 18px;
+        padding: 12px;
+        font-family: sans-serif;
+    }
+
+    .header-logo {
+        margin-top: -65px;
+        width: 100px;
+        position: relative;
+    }
+
+    .header-logo a>img {
+        width: 200px;
+    }
+
+    .header-logo a img {
+        position: absolute;
+        left: -70px;
+    }
+
+    .header-info {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin-top: 15px;
+    }
+
+    .header-info a {
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .header-info a:hover {
+        color: rgb(141, 139, 139);
+    }
+
+    .icon-search {
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .icon-user {
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .icon-cart {
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .image-gallery {
+        width: 100%;
+        height: 600px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .image-gallery img {
+        width: 49vw;
+        height: 600px;
+        object-fit: cover;
+        margin: auto;
+    }
+
+    .image-gallery-1 {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .image-gallery-1 img {
+        width: 49vw;
+        height: 600px;
+        object-fit: cover;
+        margin: auto;
+    }
+
+    .image-gallery-1 h1 {
+        width: 300px;
+        height: 50px;
+        background-color: #E5E7Eb;
+    }
+
+    .updateUser {
+        position: absolute;
+        top: 28px;
+        left: 50px;
+    }
+
+    .icon-user:hover .updateUser {
+        display: block;
+    }
+
+    .updateUser {
+        display: none;
+    }
+
+    .updateUser div {
+        font-size: 18px;
+        background-color: #E5E7Eb;
+        color: black;
+        border: none;
+        outline: none;
+        padding: 10px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .footer-basic {
+        padding: 40px 0;
+        background-color: #f7f7f7;
+        color: #4b4c4d;
+        margin-top: 100px;
+    }
+
+    .footer-basic ul {
+        padding: 0;
+        list-style: none;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-basic li {
+        padding: 0 10px;
+    }
+
+    .footer-basic ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.8;
+    }
+
+    .footer-basic ul a:hover {
+        opacity: 1;
+    }
+
+    .footer-basic .social {
+        text-align: center;
+        padding-bottom: 25px;
+    }
+
+    .footer-basic .social>a {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin: 0 8px;
+        color: inherit;
+        opacity: 0.75;
+    }
+
+    .footer-basic .social>a:hover {
+        opacity: 0.9;
+    }
+
+    .footer-basic .copyright {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 0;
+    }
+
+    .user {
+        width: 40px;
+        height: 40px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        right: 80px;
+        top: 7px;
+    }
+
+    .title {
+        margin-top: 100px;
+    }
+
+    main h1 {
+        text-align: center;
+    }
+
+    main p {
+        margin-left: 550px;
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <div class="header-logo">
+                    <a href="../index.html"><img src="../img/3-1-1-300x300-logo.png"></a>
+                </div>
+                <div class="header-info">
+                    <a href="../page/product.html">Sản phẩm</a>
+                    <a href="./sale.html">Khuyến mại</a>
+                    <a href="../page/gallery.html">Thư viện</a>
+                    <a href="../page/introduction.html">Giới thiệu</a>
+                </div>
+                <div class="header-icon">
+                    <div id="search-box">
+                        <input type="text" id="search-text" placeholder="Tìm kiếm">
+                        <hr>
+                    </div>
+                    <div class="icon-search">
+                        <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="icon-user">
+                        <i id="userIcon" class="fa-regular fa-circle-user"></i>
+                        <div class="updateUser" id="updateUser">
+                            <div onclick="linkSignIn()">Đăng nhập</div>
+                            <div onclick="linkSignUp()">Đăng kí</div>
+                        </div>
+                    </div>
+                    <div class="icon-cart">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                </div>
+
+                <label for="change_image" style="display: block;">
+                    <div class="user" style="overflow: hidden;">
+                        <div>
+                            <img style="display: block; width: 100%; height: 100%;" width="100%" id="avatar" src=""
+                                alt="">
+                        </div>
+                        <input type="file" hidden id="change_image" onchange="changeAvatar()">
+                    </div>
+                </label>
+
+            </div>
+        </header>
+    </div>
+
+    <div class="title">
+        <main>
+            <h1 style="font-size: 50px; ">Về chúng tôi</h1>
+            <p style="margin-top: 20px; width: 650px; ">Được thành lập từ 2011 với tư cách là một cửa hàng cung cấp dụng
+                cụ trượt ván tại Hà Nội. “Lenin” là tên gọi một tượng
+                đài tại Hà Nội, nơi khởi nguồn của văn hóa đường phố từ những năm cuối thập niên 90 cho tới tận bây giờ.
+                “n” Chính là số
+                đông, là cộng đồng, chính vì thế cái tên “Leninn” ra đời, chúng tôi không phải cá nhân, chúng tôi được
+                sáng lập bởi cộng
+                đồng!</p>
+            <p style="margin-top: 20px; width: 650px;">Cảm thấy quá tẻ nhạt sau 9 năm nếu mãi chỉ là một đại lý phân
+                phối nên chúng tôi quyết định phải trở thành một nhà sản
+                xuất độc lập. Luôn kết nối văn hóa đường phố nói chung cũng như Skateboarding nói riêng, tìm kiếm, phát
+                triển những cá
+                nhân có triển vọng trong cộng đồng</p>
+            <p style="margin-top: 20px;">#LENINNSKATESHOP</p>
+        </main>
+    </div>
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://www.facebook.com/leninnskateshop/" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a><a href="#">
+                    <i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a
+                    href="#"><i class="fa-brands fa-tiktok"></i></a></div>
+            <div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Home</a></li>
+                    <li class="list-inline-item"><a href="#">Services</a></li>
+                    <li class="list-inline-item"><a href="#">About</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <p class="copyright" style="font-size: 20px;"> © 2021 Leninn </p>
+        </footer>
+    </div>
+
+    <script>
+        const searchIcon = document.getElementById("searchIcon");
+        const searchBox = document.getElementById("search-box");
+        searchIcon.addEventListener('click', function () {
+            if (searchBox.style.display === 'block') {
+                searchBox.style.display = 'none';
+            } else {
+                searchBox.style.display = 'block';
+            }
+        });
+
+
+        function linkSignIn() {
+            window.location.href = "./signin.html"
+        }
+
+        function linkSignUp() {
+            window.location.href = "./signup.html"
+        }
+
+        function checkInfo() {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {}
+
+            if (currentUser.id) {
+                document.getElementById("updateUser").innerHTML =
+                    `
+                <div>Cập nhật mật khẩu</div>
+                <div onclick="signout()">Đăng xuất</div>
+            `
+                if (!currentUser.image) {
+                    document.getElementById("avatar").src = "./img/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg"
+                } else {
+                    document.getElementById("avatar").src = currentUser.image
+                }
+                document.getElementById("countItem").innerHTML = currentUser.cart.length
+            } else {
+                document.getElementById("updateUser").innerHTML =
+                    `
+            <div onclick="linkSignIn()">Đăng nhập</div>
+            <div onclick="linkSignUp()">Đăng kí</div>
+        `
+            }
+        }
+        checkInfo()
+
+        function signout() {
+            const users = JSON.parse(localStorage.getItem("users")) || []
+            const currentUser = JSON.parse(localStorage.getItem("currentUser")) || []
+            const index = users.findIndex(user => user.id == currentUser.id)
+            users[index] = currentUser
+            localStorage.setItem("users", JSON.stringify(users))
+            localStorage.removeItem("currentUser")
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill User</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        /* position: fixed; */
+        background: #232526;
+        background: -webkit-linear-gradient(to right, #414345, #232526);
+        background: linear-gradient(to right, #414345, #232526);
+        top: 0;
+        z-index: 99;
+        height: 60px;
+        width: 100vw;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-around;
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .header-icon {
+        width: 200px;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        position: relative;
+    }
+
+    #search-box {
+        position: absolute;
+        top: 40px;
+        left: -280px;
+        width: 300px;
+        height: 70px;
+        background-color: #E5E7Eb;
+        display: none;
+    }
+
+    .updateUser {
+        position: absolute;
+        top: 28px;
+        left: 50px;
+    }
+
+    .icon-user:hover .updateUser {
+        display: block;
+    }
+
+    .updateUser {
+        display: none;
+    }
+
+    .updateUser div {
+        font-size: 18px;
+        background-color: #E5E7Eb;
+        color: black;
+        border: none;
+        outline: none;
+        padding: 10px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #search-text {
+        width: 250px;
+        height: 30px;
+        margin-left: 25px;
+        outline: none;
+        border: none;
+        background-color: #E5E7Eb;
+        margin-top: 20px;
+        font-size: 18px;
+        padding: 12px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .header-logo {
+        margin-top: -65px;
+        width: 100px;
+        position: relative;
+    }
+
+    .header-logo a img {
+        position: absolute;
+        left: -70px;
+    }
+
+    .header-logo a>img {
+        width: 200px;
+    }
+
+    .header-info {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin-top: 15px;
+    }
+
+    .header-info a {
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font: bold;
+    }
+
+    .header-info a:hover {
+        color: rgb(141, 139, 139);
+    }
+
+    .icon-search {
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .icon-user {
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .icon-cart {
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .user {
+        width: 40px;
+        height: 40px;
+        border: 1px solid white;
+        border-radius: 50%;
+        position: absolute;
+        right: 80px;
+        top: 7px;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+
+    main h1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    main table {
+        width: 1000px;
+    }
+
+    tr,
+    th {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    table {
+        background: #005AA7;
+        background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);
+        background: linear-gradient(to right, #d5d4c3, #63abea);
+    }
+
+    .btnBillUser {
+        color: white;
+        padding: 5px 30px;
+        background: #7F7FD5;
+        background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+        background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <div class="header-logo">
+                    <a href="../index.html"><img src="../img/3-1-1-300x300-logo.png" onclick="clickLogo()"></a>
+                </div>
+                <div class="header-info">
+                    <a href="./product.html">Sản phẩm</a>
+                    <a href="./sale.html">Khuyến mại</a>
+                    <a href="./gallery.html">Thư viện</a>
+                    <a href="./introduction.html">Giới thiệu</a>
+                </div>
+                <div class="header-icon">
+                    <div id="search-box">
+                        <input type="text" id="search-text" placeholder="Tìm kiếm">
+                        <hr>
+                    </div>
+                    <div class="icon-search">
+                        <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="icon-user">
+                        <i id="userIcon" class="fa-regular fa-circle-user"></i>
+                        <div class="updateUser" id="updateUser">
+                            <div onclick="linkSignIn()">Đăng nhập</div>
+                            <div onclick="linkSignUp()">Đăng kí</div>
+                        </div>
+                    </div>
+
+                    <div class="icon-cart" id="icon-cart">
+                        <i class="fa-solid fa-bag-shopping" onclick="linkCart()">
+                            <span id="countItem"
+                                style="font-size: 15px; position: absolute; border-radius: 50%;"></span></i>
+                    </div>
+                </div>
+
+                <label for="change_image" style="display: block;">
+                    <div class="user" style="overflow: hidden;">
+                        <div>
+                            <img style="display: block; width: 100%; height: 100%;" width="100%" id="avatar" src=""
+                                alt="">
+                        </div>
+                        <input type="file" hidden id="change_image" onchange="changeAvatar()">
+                    </div>
+                </label>
+            </div>
+        </header>
+    </div>
+
+    <div class="title">
+        <main>
+            <h1 style="margin-top: 30px;">Your Order</h1>
+            <table border="1px" cellpadding="10px" cellspacing="10px" >
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>ID</th>
+                        <th>Giỏ hàng</th>
+                        <th>Tổng tiền</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_billUser" style="text-align: center;">
+                    
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="https://kit.fontawesome.com/7cf5448cc8.js" crossorigin="anonymous"></script>
+    <script src="../js/bill_user.js"></script>
+</body>
+
+</html>

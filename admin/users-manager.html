@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<style>
+    .btnStatus {
+        color: white;
+        padding: 5px;
+        width: 80px;
+        height: 40px;
+        border-radius: 45%;
+        /* background-color: steelblue; */
+        outline: none;
+        border: none;
+        font-weight: 500;
+        background: #667db6;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+</style>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span><img onclick="clickLogo()" src="../img/3-1-1-300x300-logo.png"
+                            style="width: 200px; height: 200px; cursor: pointer;"></span>
+
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="./category.html">
+                        <span class="material-icons-outlined">category</span> Categories
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="./users-manager.html">
+                        <span class="material-icons-outlined">groups</span> Users
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="./product-manager.html">
+                        <span class="material-icons-outlined">fact_check</span> Products
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="./bill-manager.html">
+                        <span class="material-icons-outlined">poll</span> Bill
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                <h1 style="font-size: 45px;">Users management</h1>
+            </div>
+            <div>
+                <table id="content" border="1px" cellpadding="10px" cellspacing="10px" style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_body">
+
+                    </tbody>
+
+                </table>
+            </div>
+        </main>
+        <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/user_manager.js"> </script>
+</body>
+
+</html>

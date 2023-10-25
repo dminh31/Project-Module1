@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Leninn |</title>
+    <script src="https://kit.fontawesome.com/7cf5448cc8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="head">
+            <div class="header">
+                <div class="header-logo">
+                    <img src="./img/3-1-1-300x300-logo.png" onclick="clickLogo()">
+                </div>
+                <div class="header-info">
+                    <a href="./page/product.html">Sản phẩm</a>
+                    <a href="./page/sale.html">Khuyến mại</a>
+                    <a href="./page/gallery.html">Thư viện</a>
+                    <a href="./page/introduction.html">Giới thiệu</a>
+                </div>
+                <div class="header-icon">
+                    <div id="search-box">
+                        <input type="text" id="search-text" placeholder="Tìm kiếm">
+                        <hr>
+                    </div>
+                    <div class="icon-search">
+                        <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="icon-user">
+                        <i id="userIcon" class="fa-regular fa-circle-user"></i>
+                        <div class="updateUser" id="updateUser">
+                            <!-- <div onclick="linkSignIn()">Đăng nhập</div>
+                            <div onclick="linkSignUp()">Đăng kí</div> -->
+                        </div>
+                    </div>
+
+                    <div class="icon-cart" id="icon-cart">
+                        <i class="fa-solid fa-bag-shopping" onclick="linkCart()"></i>
+                    </div>
+                </div>
+
+                <label for="change_image" style="display: block;">
+                    <div class="user" style="overflow: hidden;">
+                        <div>
+                            <img style="display: block; width: 100%; height: 100%;" width="100%" id="avatar" src=""
+                                alt="">
+                        </div>
+                        <input type="file" hidden id="change_image" onchange="changeAvatar()">
+                    </div>
+                </label>
+
+            </div>
+        </header>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./img/_ceetbn.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/_OPlmaN.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/_usHKeq.png" alt=""></div>
+            </div>
+            <!-- <div class="swiper-button-next" style="color: white;"></div>
+            <div class="swiper-button-prev" style="color: white;"></div> -->
+            <!-- <div class="swiper-pagination" style="color: white;"></div> -->
+        </div>
+    </div>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+
+    <div class="new-product">
+        <h1>New Arrivals</h1>
+        <div class="product" id="product">
+            <!-- <div class="image-product">
+                <img src="./img/28-UAUaJa_800x800.png" alt="">
+                <div class="content">
+                    <h4>LENINN BIG STAMP SHIRT</h4>
+                    <p>560,000đ</p>
+                </div>
+            </div>
+            <div class="image-product">
+                <img src="./img/lemia-00075a-Zc7MuL_800x800.png" alt="">
+                <div class="content">
+                    <h4>LENINN BLACK SOCCER JERSEY</h4>
+                    <p>550,000đ</p>
+                </div>
+            </div>
+            <div class="image-product">
+                <img src="./img/leninn-rakkiu-con-vit-KObfGU_800x800.png" alt="">
+                <div class="content">
+                    <h4>LENINN x RAKKIU DUCK DECK</h4>
+                    <p>1,050,000đ</p>
+                </div>
+            </div>
+            <div class="image-product">
+                <img src="./img/paradol-deck-0_800x800.png" alt="">
+                <div class="content">
+                    <h4>PARADOL DECK</h4>
+                    <p>850,000đ</p>
+                </div>
+            </div> -->
+        </div>
+        <div class="product-1" id="product-1">
+            <!-- <div class="image-product">
+                <img src="./img/lennin-0162-1XYoX4_800x800.png" alt="">
+                <div class="content">
+                    <h4>BLACK OVERSIZED WASHED DENIM SHORT</h4>
+                    <p>520,000đ</p>
+                </div>
+            </div>
+            <div class="image-product">
+                <img src="./img/lennin-0056a-5S8Svr_800x800.png" alt="">
+                <div class="content">
+                    <h4>BLUE OVERSIZED WASHED DENIM SHIRT</h4>
+                    <p>650,000đ</p>
+                </div>
+            </div>
+            <div class="image-product">
+                <img src="./img/fw21-tawny-flying-duck-bomber-0_800x800.png" alt="">
+                <div class="content">
+                    <h4>TIGER STRIPPED LENINN TEE</h4>
+                    <p>550,000đ</p>
+                </div>
+            </div>
+            <div class="image-product">
+                <img src="./img/lennin-0180a-SfUwRA_800x800.png" alt="">
+                <div class="content">
+                    <h4>LENINN STONE BUCKED HAT</h4>
+                    <p>250,000đ</p>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="showMore">
+            <span onclick="showMore()" style="cursor: pointer;">Xem thêm</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </div>
+        <div class="iconic">
+            <ul>
+                <li><img src="./img/logosss-2-300x300.png" alt=""></li>
+                <li><img src="./img/logosss-300x300.png" alt=""></li>
+                <li><img src="./img/2-1-1-300x300.png" alt=""></li>
+                <li><img src="./img/3-1-1-300x300-logo.png" alt=""></li>
+                <li><img src="./img/1-1-1-300x300.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://www.facebook.com/leninnskateshop/" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a><a href="#">
+                    <i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a
+                    href="#"><i class="fa-brands fa-tiktok"></i></a></div>
+            <div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Home</a></li>
+                    <li class="list-inline-item"><a href="#">Services</a></li>
+                    <li class="list-inline-item"><a href="#">About</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <p class="copyright" style="font-size: 20px;"> © 2021 Leninn </p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
